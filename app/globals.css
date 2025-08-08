@@ -2,13 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { color-scheme: light; }
-.dark { color-scheme: dark; }
+:root {
+  color-scheme: light;
+  font-family: 'Montserrat', sans-serif;
+}
+.dark {
+  color-scheme: dark;
+}
 
-body { @apply bg-neutral-50 text-neutral-900 dark:bg-brand-900 dark:text-neutral-100; }
-.container { @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8; }
+body {
+  @apply bg-neutral-50 text-neutral-900 dark:bg-brand-900 dark:text-neutral-100;
+  font-family: 'Montserrat', sans-serif;
+}
+.container {
+  @apply mx-auto max-w-6xl px-4 sm:px-6 lg:px-8;
+}
 
-/* Register glass + shadows as utilities so Tailwind knows them */
 @layer utilities {
   .glass {
     @apply backdrop-blur bg-white/60 dark:bg-white/10 border border-white/30 dark:border-white/10 shadow-glass;
@@ -18,11 +27,32 @@ body { @apply bg-neutral-50 text-neutral-900 dark:bg-brand-900 dark:text-neutral
   }
 }
 
-.btn { @apply inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-3 text-sm font-medium transition; }
-.btn-primary { @apply bg-black text-white hover:opacity-90 dark:bg-white dark:text-black; }
-.btn-ghost { @apply border border-neutral-300 bg-white hover:bg-neutral-100 dark:bg-white/10 dark:border-white/10; }
-.card { @apply rounded-3xl border border-neutral-200 bg-white p-6 shadow-soft dark:glass; }
-.badge { @apply inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-3 py-1 text-xs text-neutral-600 dark:glass dark:text-neutral-200; }
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-3 text-sm font-medium transition;
+}
+.btn-primary {
+  @apply bg-black text-white hover:opacity-90 dark:bg-white dark:text-black;
+}
+.btn-ghost {
+  @apply border border-neutral-300 bg-white hover:bg-neutral-100 dark:bg-white/10 dark:border-white/10;
+}
+.card {
+  @apply rounded-3xl border border-neutral-200 bg-white p-6 shadow-soft dark:glass;
+}
+.badge {
+  @apply inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-3 py-1 text-xs text-neutral-600 dark:glass dark:text-neutral-200;
+}
 
-.snap-row { scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
-.snap-item { scroll-snap-align: start; }
+.snap-row {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.snap-item {
+  scroll-snap-align: start;
+}
+
+/* Theme-aware phone mini page */
+.public-page {
+  @apply rounded-2xl p-4 transition-colors;
+  @apply bg-white text-neutral-900 dark:bg-brand-700 dark:text-white;
+}
