@@ -4,10 +4,10 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { CalendarDays, Clock, Users, ArrowRight } from 'lucide-react'
 
-const Value = ({icon, title, desc}:{icon: any, title: string, desc: string}) => (
+const Value = ({ icon, title, desc }: { icon: any, title: string, desc: string }) => (
   <div className="card">
-    <div className="flex items-center gap-3">
-      <div className="p-2 rounded-xl bg-neutral-100 dark:bg-white/10">{icon}</div>
+    <div className="flex items-start gap-3">
+      <div className="p-2 rounded-xl bg-neutral-100 dark:bg-white/10 flex-shrink-0">{icon}</div>
       <div>
         <p className="font-medium">{title}</p>
         <p className="text-sm text-neutral-600 dark:text-neutral-300">{desc}</p>
