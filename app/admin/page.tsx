@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Plus, Trash2, LinkIcon, Settings } from 'lucide-react'
+import SlotsPreview from '@/components/SlotsPreview'
 
 type Service = { name: string; duration: number; price: number }
 
@@ -123,7 +124,9 @@ export default function Page() {
                 </div>
                 <div className="text-xs bg-neutral-100 px-3 py-1.5 rounded-xl dark:bg-white/10">/{biz.handle}</div>
               </div>
-              <div className="mt-3 h-24 rounded-xl bg-neutral-100 grid place-items-center text-neutral-500 text-xs dark:bg-white/10">slots preview</div>
+              <div className="mt-3 h-24 rounded-xl bg-neutral-100 p-3 dark:bg-white/10">
+                <SlotsPreview />
+              </div>
             </div>
           </motion.div>
         </div>

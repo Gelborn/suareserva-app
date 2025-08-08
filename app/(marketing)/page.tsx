@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { CalendarDays, Clock, Users, ArrowRight } from 'lucide-react'
+import SlotsPreview from '@/components/SlotsPreview'
 
 const Value = ({ icon, title, desc }: { icon: any, title: string, desc: string }) => (
   <div className="card">
@@ -38,8 +39,8 @@ export default function Page() {
           <div className="card">
             <div className="rounded-2xl bg-neutral-900 text-white p-6 dark:bg-brand-700">
               <p className="text-sm opacity-80">Página pública</p>
-              <div className="mt-3 h-48 rounded-xl bg-neutral-800 grid place-items-center dark:bg-brand-900/40">
-                <span className="text-neutral-400">calendário/slots preview</span>
+              <div className="mt-3 h-48 rounded-xl bg-neutral-800 p-4 dark:bg-brand-900/40">
+                <SlotsPreview />
               </div>
             </div>
           </div>
@@ -47,7 +48,9 @@ export default function Page() {
             <div>
               <p className="text-sm font-medium">Serviço: Corte + Barba</p>
               <p className="text-xs text-neutral-600 dark:text-neutral-300">R$ 89 · 45 min</p>
-              <div className="mt-3 h-16 rounded-xl bg-neutral-100 grid place-items-center text-neutral-500 text-xs dark:bg-white/10">horários</div>
+              <div className="mt-3 rounded-xl bg-neutral-100 p-3 dark:bg-white/10">
+                <SlotsPreview times={["09:00","09:45","10:30"]} />
+              </div>
             </div>
           </div>
         </motion.div>
