@@ -4,6 +4,14 @@ import type { ReactNode } from 'react'
 import { ThemeProvider } from 'next-themes'
 import Header from '@/components/Header'
 import PWAInstall from '@/components/PWAInstall'
+import { Montserrat } from 'next/font/google'
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-mont',
+  display: 'swap',
+})
+
 
 export const metadata = {
   metadataBase: new URL('https://suareserva.online'),
@@ -35,8 +43,8 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
-      <body>
+    <html lang="pt-BR" className={montserrat.variable} suppressHydrationWarning>
+      <body className="font-sans">
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <Header />
           <main>{children}</main>
